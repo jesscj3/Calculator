@@ -89,13 +89,13 @@ public class MainActivity extends AppCompatActivity {
         updateScreen();
     }
 
-    private double operate(String a, String b, String op){
+    private int operate(String a, String b, String op){
         switch (op){
-            case "+": return Double.valueOf(a) + Double.valueOf(b);
-            case "-": return Double.valueOf(a) - Double.valueOf(b);
-            case "x": return Double.valueOf(a) * Double.valueOf(b);
+            case "+": return Integer.valueOf((int)(Double.valueOf(a) + Double.valueOf(b)));
+            case "-": return Integer.valueOf((int)(Double.valueOf(a) - Double.valueOf(b)));
+            case "x": return Integer.valueOf((int)(Double.valueOf(a) * Double.valueOf(b)));
             case "÷": try{
-                return Double.valueOf(a) / Double.valueOf(b);
+                return Integer.valueOf((int)(Double.valueOf(a) / Double.valueOf(b)));
             }catch (Exception e){
                 Log.d("Calc", e.getMessage());
             }
